@@ -19,11 +19,8 @@ int fd=open("file1.txt", O_RDWR);
 write(fd,"Hello",5);
 close(fd);
 int fd2=open("file1.txt", O_CREAT| O_EXCL |O_RDWR,0644);
-else
-{
 printf("Execution succeded(file not exist)\n");
 close(fd2);
-}
 return 0;
 }
 /*
