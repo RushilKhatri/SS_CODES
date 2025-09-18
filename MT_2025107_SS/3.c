@@ -16,7 +16,7 @@ Date: 6th Sept, 2025.
 
 int main(void)
 {
-int fd= creat("made_withcreat.txt", 0644);
+int fd= creat("file1.txt", 0644);
 printf("file Descriptor: %d\n", fd);
 close(fd);
 return 0;
