@@ -15,18 +15,10 @@ Date: 6th Sept, 2025.
 int main(void)
 {
 int temp=creat("file1.txt",0644);
-if(temp==-1)
-{
-perror("creat"); return 1;
-}
 int fd=open("file1.txt", O_RDWR);
 write(fd,"Hello",5);
 close(fd);
 int fd2=open("file1.txt", O_CREAT| O_EXCL |O_RDWR,0644);
-if(fd==-1)
-{
-printf("The execution failed: %s\n", strerror(errno));
-}
 else
 {
 printf("Execution succeded(file not exist)\n");
