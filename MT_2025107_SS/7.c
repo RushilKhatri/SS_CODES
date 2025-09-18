@@ -13,18 +13,14 @@ Date: 6th Sept, 2025.
 #include <errno.h>
 int main(int argc, char *argv[]) {
  int in = open(argv[1], O_RDONLY);
- if (in < 0) { perror("open src"); return 1; }
  int out = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
- if (out < 0) { perror("open dst"); close(in); return 1; }
  char buf[65536];
  while (1) {
  ssize_t n = read(in, buf, sizeof(buf));
  if (n == 0) break;
- if (n < 0) { perror("read"); close(in); close(out); return 1; }
  ssize_t off = 0;
  while (off < n) {
  ssize_t m = write(out, buf + off, n - off);
- if (m <= 0) { perror("write"); close(in); close(out); return 1; }
  off += m;
  }
  }
