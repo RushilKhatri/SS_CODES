@@ -15,19 +15,13 @@ Date: 6th Sept, 2025.
 #include <errno.h>
 #include <string.h>
 int main(void) {
- if (symlink("original.txt", "softlink_to_original.txt") == -1) {
- perror("symlink"); 
- } else {
+ if (symlink("original.txt", "softlink_to_original.txt") != -1) {
  printf("Soft link created.\n");
  }
- if (link("original.txt", "hardlink_to_original.txt") == -1) {
- perror("link");
- } else {
+ if (link("original.txt", "hardlink_to_original.txt") != -1) {
  printf("Hard link created.\n");
  }
- if (mkfifo("mypipe", 0666) == -1) {
- perror("mkfifo"); 
- } else {
+ if (mkfifo("mypipe", 0666) != -1) {
  printf("FIFO created.\n");
  }
  return 0;
