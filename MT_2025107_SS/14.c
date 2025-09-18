@@ -13,7 +13,6 @@ Date: 6th Sept, 2025.
 int main(int argc,char *argv[])
 {
 struct stat set1;
-if(lstat(argv[1], &set1)==-1){perror("lstat"); return 1;}
 mode_t t=set1.st_mode & S_IFMT;
 const char *type="unknown";
 if(S_ISREG(set1.st_mode))type="regular file";
