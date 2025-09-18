@@ -16,7 +16,7 @@ int main (void)
 {
 int fd=open("sparse.bin", O_WRONLY|O_CREAT|O_TRUNC,0644);
 write(fd,"AAAAAAAAAA",10);
-off_t off=lseek(fd,10,SEEK_CUR);
+off_t off=lseek(fd,10,SEEK_CUR);// the lseek returns the new offset position in the file.
 write(fd,"BBBBBBBBBB",10);
 close(fd);
 return 0;
