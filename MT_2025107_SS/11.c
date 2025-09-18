@@ -19,7 +19,7 @@ int fd=open("file1.txt",O_WRONLY|O_CREAT|O_TRUNC,0644);
 int fd_1=dup(fd);
 int fd_2=dup2(fd,10);
 int flags=fcntl(fd,F_GETFL);
-if(fcntl(fd,F_SETFL,flags | O_APPEND)<0){perror("F_SETFL"); return 1;}
+if(fcntl(fd,F_SETFL,flags | O_APPEND)<0){return 1;}
 write(fd,"A",1);
 write(fd_1,"B",1);
 write(fd_2,"C",1);
