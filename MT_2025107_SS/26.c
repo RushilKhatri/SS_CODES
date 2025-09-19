@@ -14,7 +14,6 @@ int main(void)
 {
 printf("Will Exec now\n");
 execl("/bin/echo","echo","Hello","World",NULL);
-perror("execl");
 return 1;
 }
 
