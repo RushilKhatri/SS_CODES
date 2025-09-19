@@ -17,8 +17,6 @@ printf("Child ID=%d,Parent ID=%d\n", getpid(), getppid());
 } else if (pid > 0) {
 printf("Parent is exiting.\n");
 _exit(0);
-} else {
-perror("fork"); return 1;
 }
 return 0;
 }
