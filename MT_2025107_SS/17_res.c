@@ -25,7 +25,7 @@ return fcntl(fd, F_SETLKW, &fl);
 int main(void)
 {
 int fd = open("ticket.txt", O_RDWR);
-if (lock_write(fd) < 0) { perror("lock"); return 1; }
+lock_write(fd); 
 char buf[64];
 //reading the ticket number
 lseek(fd, 0, SEEK_SET);
