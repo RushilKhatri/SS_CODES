@@ -22,14 +22,6 @@ Description : a program to print the following information about a given file.
 #include<pwd.h>
 #include<grp.h>
 #include<sys/stat.h>
-static void print_time(const char *label, time_t t1)
-{
-char buf[64];
-struct tm tm;
-localtime_r (&t1,&tm);
-strftime(buf,sizeof(buf),"%Y-%m-%d %H:%M:%S",&tm);
-printf("%s:%s\n",label,buf);
-}
 int main(int argc, char *argv[])
 {
 struct stat st;
@@ -42,9 +34,9 @@ printf("gid:%u(%s)\n", st.st_gid, gr ? gr->gr_name : "?");
 printf("size:%lld bytes\n", (long long)st.st_size);
 printf("block size:%ld\n", (long)st.st_blksize);
 printf("blocks:%lld\n", (long long)st.st_blocks);
-print_time("last access", st.st_atime);
-print_time("last modification", st.st_mtime);
-print_time("last status change", st.st_ctime);
+printf("Last access: %s", ctime(&st.st_atime));
+printf("Last modification: %s", ctime(&st.st_mtime));
+printf("Last status change: %s", ctime(&st.st_ctime));
 return 0;
 }
 /*
@@ -57,9 +49,9 @@ gid:14680064(?)
 size:32768 bytes
 block size:140720448604152
 blocks:798863917062
-last access:1970-01-01 05:30:00
-last modification:1970-01-01 05:30:00
-last status change:1970-01-01 05:30:00
+Last access: Thu Jan  1 05:30:00 1970
+Last modification: Thu Jan  1 05:30:00 1970
+Last status change: Thu Jan  1 05:30:00 1970
 ============================================================================
 */
 
