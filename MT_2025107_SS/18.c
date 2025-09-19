@@ -25,7 +25,7 @@ int main(void)
 {
 int filed=open("file1.txt",O_RDWR| O_CREAT, 0644);
 ftruncate(filed,60);
-if(critical_reg(filed,F_WRLCK,20,20)<0){perror("lock");return 1;}
+critical_reg(filed,F_WRLCK,20,20);
 lseek(filed,20,SEEK_SET);
 write(filed,"Record updated\n",14);
 sleep(15);
