@@ -14,12 +14,9 @@ Date: 6th Sept, 2025.
 int main(void) 
 {
 struct sched_param sp = { .sched_priority = 10 };
-if (sched_setscheduler(0, SCHED_RR, &sp) == -1) {
-printf("sched_setscheduler failed: %s\n", strerror(errno));
-} else {
+sched_setscheduler(0, SCHED_RR, &sp);
 int poll = sched_getscheduler(0);
 printf("Policy now: %d (FIFO=%d RR=%d OTHER=%d)\n", poll, SCHED_FIFO, SCHED_RR, SCHED_OTHER);
-}
 return 0;
 }
 /*
