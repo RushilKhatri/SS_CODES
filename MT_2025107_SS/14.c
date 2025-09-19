@@ -13,7 +13,7 @@ Date: 6th Sept, 2025.
 int main(int argc,char *argv[])
 {
 struct stat set1;
-mode_t t=set1.st_mode & S_IFMT;
+stat(argv[1],&set1);
 const char *type="unknown";
 if(S_ISREG(set1.st_mode))type="regular file";
 else if(S_ISDIR(set1.st_mode)) type="directory";
