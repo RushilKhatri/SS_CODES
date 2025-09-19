@@ -24,7 +24,7 @@ return fcntl(filed,F_SETLKW,&f1);
 int main(void)
 {
 int filed=open("file1.txt",O_RDWR|O_CREAT, 0644);
-if(lock_reg(filed,F_WRLCK,0,0)<0){perror("write lock"); return 1;}
+lock_reg(filed,F_WRLCK,0,0);
 sleep(15);
 lock_reg(filed,F_UNLCK,0,0);
 close(filed);
