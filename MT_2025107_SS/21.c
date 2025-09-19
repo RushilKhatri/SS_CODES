@@ -12,10 +12,6 @@ Date: 6th Sept, 2025.
 int main(void)
 {
 pid_t pid=fork();
-if(pid<0)
-{
-perror("fork");return 1;
-}
 if(pid==0)
 {
 printf("child id=%d, Parent id=%d\n",getpid(),getppid());
