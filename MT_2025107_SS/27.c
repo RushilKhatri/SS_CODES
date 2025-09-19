@@ -5,7 +5,8 @@ Author : Rushil Khatri
 Description :A program to execute ls -Rl by the following system calls
 a. execl
 b. execlp
-c. execled. execv
+c. execle
+d. execv
 e. execvp
 Date: 6th Sept, 2025.
 ============================================================================
@@ -14,9 +15,9 @@ Date: 6th Sept, 2025.
 #include <stdio.h>
 int main(void) {
 char *argv[] = {"ls", "-Rl", NULL};
-char *envp[] = {"LANG=C", NULL};
 execvp("ls", argv);
-perror("exec* failed");
+//execv("/bin/ls", argv);
+//execlp("ls", "ls", "-Rl", (char *)NULL);
 return 1;
 }
 /*
