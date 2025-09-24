@@ -22,7 +22,6 @@ pid_t w = waitpid(p[1], &status, 0);
 if (w == p[1]) {
 if (WIFEXITED(status)) printf("Child2 exited with %d\n", WEXITSTATUS(status));
 }
-// Reap remaining children
 while (wait(NULL) > 0);
 return 0;
 }
