@@ -6,7 +6,7 @@ Description : a program to take input from STDIN and display on STDOUT. Use only
 Date: 6th Sept, 2025.
 ============================================================================
 */
-
+#include<stdio.h>
 #include<unistd.h>
 int main(void)
 {
