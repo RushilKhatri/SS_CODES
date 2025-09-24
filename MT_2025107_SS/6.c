@@ -8,7 +8,6 @@ Date: 6th Sept, 2025.
 */
 
 #include<unistd.h>
-#include<errno.h>
 int main(void)
 {
 char buf[4096];
