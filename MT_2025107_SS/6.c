@@ -12,8 +12,6 @@ Date: 6th Sept, 2025.
 int main(void)
 {
 char buf[4096];
-while(1)
-{
 ssize_t siz=read(0,buf,sizeof(buf));
 if(siz==0) break;
 if(siz<0) return 1;
@@ -23,7 +21,6 @@ while(offset<siz)
 ssize_t x=write(1,buf+offset,siz-offset);
 if(x<=0)return 1;
 offset+=x;
-}
 }
 return 0;
 }
