@@ -2,7 +2,9 @@
 ============================================================================
 Name : 27.c
 Author : Rushil Khatri
-Description : Write a program to create a message queue and print the key and message queue id.
+Description : Write a program to receive messages from the message queue.
+ a. with 0 as a flag
+ b. with IPC_NOWAIT as a flag
 Date: 20th October 2025
 ============================================================================
 */
