@@ -33,7 +33,7 @@ rushil@rushil-HP-Envy-x360-2-in-1-Laptop-15-fe0xxx:~/Desktop/HOL2/Ques19$ ./19
 mknod_fifo created using mknod
 
 rushil@rushil-HP-Envy-x360-2-in-1-Laptop-15-fe0xxx:~/Desktop/HOL2/Ques19$ ./19
-mkfifo created using mknod
+mkfifo created using mkfifo
 
 ====================================================================================
 */
