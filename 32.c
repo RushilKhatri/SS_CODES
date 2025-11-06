@@ -2,9 +2,11 @@
 ============================================================================
 Name : 32.c
 Author : Rushil Khatri
-Description :  Write a program to create a semaphore and initialize value to the semaphore.
- a. create a binary semaphore
- b. create a counting semaphore
+Description :  Write a program to implement semaphore to protect any critical section.
+ a. rewrite the ticket number creation program using semaphore
+ b. protect shared memory from concurrent write access
+ c. protect multiple pseudo resources ( may be two) using counting semaphore
+ d. remove the created semaphore
 Date: 20th October 2025
 ============================================================================
 */
