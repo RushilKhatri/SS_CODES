@@ -3,7 +3,9 @@
 ============================================================================
 Name : 34.c
 Author : Rushil Khatri
-Description :  a program to communicate between two machines using socket.
+Description :   program to create a concurrent server.
+ a. use fork
+ b. use pthread_create
 Date: 20th October 2025
 ============================================================================
 */
